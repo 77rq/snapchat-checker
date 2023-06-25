@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package snapchat.activation.api;
+
+service SuggestUsernameService {
+  rpc CheckUsername (CheckUsernameRequest) returns (CheckUsernameResponse);
+}
+
+message CheckUsernameRequest {
+  string ww = 1;
+  uint32 unused = 3;
+  string request_id = 4;
+  string session_id = 5;
+}
+
+message CheckUsernameResponse {
+  uint32 is_available = 1;
+  string suggested_username = 2;
+}
